@@ -1,75 +1,99 @@
-# LoginApp - Autenticación en .NET MAUI con API PHP y pruebas unitarias
 
-Este proyecto es una aplicación de autenticación desarrollada con **.NET MAUI**, que consume una API PHP existente y valida el inicio de sesión del usuario. También incluye pruebas unitarias y de integración para verificar la lógica del ViewModel y el comportamiento real de la API.
+# LoginApp - Proyecto de Autenticación en .NET MAUI
 
----
-
-## Tecnologías utilizadas
-
-- [.NET MAUI](https://learn.microsoft.com/dotnet/maui/)
-- [CommunityToolkit.MVVM](https://learn.microsoft.com/en-us/dotnet/communitytoolkit/mvvm/)
-- [NUnit](https://nunit.org/)
-- [Moq](https://github.com/moq/moq)
-- [API PHP](https://www.php.net/)
+Este proyecto corresponde a una aplicación de autenticación móvil desarrollada con **.NET MAUI**, que consume una **API REST PHP** real para validar credenciales de usuario. La solución aplica el patrón **MVVM**, utiliza la librería **CommunityToolkit.Mvvm**, y cuenta con pruebas automatizadas usando **NUnit y Moq**.
 
 ---
 
-## Estructura del proyecto
+## Estructura del Proyecto
 
-![Estructura del proyecto](images/extructura.png)
-
----
-
-## Funcionalidad de Login
-
-Pantalla inicial:
-
-![Vista inicial](images/vista_login.png)
-
-Error al iniciar sesión:
-
-![Error de API](images/login_error_api.png)
-
-Inicio de sesión exitoso:
-
-![Login OK](images/vista_ok_api.png)
-
----
-
-## Pruebas automatizadas
-
-### Pruebas unitarias (`LoginViewModelTests.cs`)
-- Validan comportamiento del ViewModel en distintos escenarios.
-- Se usan `Moq` y `NUnit`.
-
-### Prueba de integración real (`LoginApiTests.cs`)
-- Conecta directamente al endpoint:
-  `https://app.agrodexsas.com/ApiApp/AgrdxApi.php`
-- Verifica que el login sea exitoso.
-
----
-
-## Resultados de ejecución
-
-Vista desde el Explorador de Pruebas:
-
-![Explorador de pruebas](images/prueba_ok_explorador.png)
-
-Resultado desde terminal:
-
-![Resultado consola](images/prueba_ok_terminal.png)
-
----
-
-## Ejecutar las pruebas
-
-```bash
-dotnet test LoginApp.Tests
+```
+Parcial_TEST/
+├── LoginApp/              # Proyecto MAUI (interfaz de usuario)
+├── LoginApp.Core/         # Lógica del dominio, servicios e interfaces
+├── LoginApp.Tests/        # Pruebas unitarias e integración
+│   └── Docs/
+│       ├── images/        # Capturas del proceso y pruebas
+│       └── README_LoginApp_FINAL.md
 ```
 
 ---
 
-## Autor
+## 1. Configuración del Entorno
 
-Leon Dario Builes Valencia  
-Proyecto desarrollado como entrega para la asignatura Lenguaje de Programación Avanzado 2 - Corpotación Universitaria Remington 2025.
+- Proyecto creado con Visual Studio 2022.
+- Target Framework: `.NET 8.0`.
+- Se utilizaron los paquetes:
+  - `CommunityToolkit.Mvvm`
+  - `NUnit`, `Moq`
+  - `Microsoft.NET.Test.Sdk`
+- Se organizaron los proyectos por capas para mantener el principio de responsabilidad única.
+
+---
+
+## 2. Implementación de Pruebas Unitarias
+
+Se implementaron **4 pruebas unitarias** en el archivo `LoginViewModelTests.cs`:
+
+- Verifica el login exitoso con mensaje correcto.
+- Verifica el login fallido con credenciales inválidas.
+- Valida que el comando `LoginCommand` no se ejecuta si los campos están vacíos.
+- Verifica que se puede ejecutar el comando cuando los campos están llenos.
+
+> Se utilizó `Moq` para simular `IAuthService` y aislar la lógica de negocio.
+
+---
+
+## 3. Prueba de Integración (API PHP)
+
+Se creó un archivo `LoginApiTests.cs` que realiza una **petición real** a la API alojada en `https://app.agrodexsas.com/ApiApp/AgrdxApi.php`.
+
+- Se envió un POST con credenciales reales (`lbuiles / lbuiles87*`).
+- Se validó que el status code fuera `200 OK`.
+- Se aseguró que el mensaje devuelto fuera `"Inicio de sesion exitoso"`.
+
+> Esta prueba valida la conexión real con el backend desde la lógica del proyecto.
+
+---
+
+## 4. Ejecución de Pruebas
+
+Las pruebas fueron ejecutadas desde:
+- Explorador de pruebas en Visual Studio.
+- Terminal con `dotnet test`.
+
+Se obtuvieron **6 pruebas exitosas de 6 ejecutadas**.
+
+### Evidencias
+
+| Prueba en Explorador | Prueba en Terminal |
+|----------------------|--------------------|
+| ![TestExplorer](Docs/images/prueba_ok_explorador.png) | ![TestTerminal](Docs/images/prueba_ok_terminal.png) |
+
+---
+
+## 5. Vista de la App
+
+Pantalla principal de Login con campos de entrada y resultado de login:
+
+| Vista Login | Login Exitoso | Login Fallido |
+|-------------|----------------|----------------|
+| ![Login](Docs/images/vista_login.png) | ![OK](Docs/images/vista_ok_api.png) | ![Error](Docs/images/login_error_api.png) |
+
+---
+
+## Conclusión
+
+Este proyecto cumple con todos los criterios solicitados:
+
+- Configuración del entorno con dependencias correctas
+- Múltiples pruebas unitarias funcionales
+- Prueba de integración real con API externa
+- Ejecución validada y documentada
+- Documentación completa en Markdown y PDF
+
+---
+
+Autor: **Leon Dario Builes Valencia**  
+Curso: Lenguaje de Programación Avanzado 2 – Corporacion Universitaria Remington  
+Año: 2025
