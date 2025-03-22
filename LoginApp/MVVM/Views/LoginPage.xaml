@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="LoginApp.MVVM.Views.LoginPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:viewmodels="clr-namespace:LoginApp.Core.ViewModels;assembly=LoginApp.Core"
+    Title="LoginPage"
+    NavigationPage.HasNavigationBar="False"
+    Shell.FlyoutBehavior="Disabled"
+    Shell.NavBarIsVisible="False">
+    <ContentPage.Content>
+        <ScrollView Orientation="Vertical" VerticalScrollBarVisibility="Default">
+            <Grid RowDefinitions=".8*,*">
+                <Grid.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStopCollection>
+                            <GradientStop Offset="0.3" Color="White" />
+                            <GradientStop Offset="1" Color="{StaticResource Primary}" />
+                        </GradientStopCollection>
+                    </LinearGradientBrush>
+                </Grid.Background>
+
+                <VerticalStackLayout VerticalOptions="Center">
+                    <Image
+                        Margin="40"
+                        HeightRequest="150"
+                        Source="logologin.png"
+                        WidthRequest="150" />
+                    <Label
+                        Margin="0,-30,0,0"
+                        FontAttributes="Bold"
+                        FontSize="25"
+                        HorizontalOptions="CenterAndExpand"
+                        HorizontalTextAlignment="Center"
+                        Text="LENGUAJE DE PROGRAMACIÓN AVANZADO 2"
+                        TextColor="{StaticResource Primary}" />
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Grid.Row="1" Margin="40,0">
+
+                    <!--  Usuario  -->
+                    <VerticalStackLayout Padding="0">
+                        <Label Margin="5,0" Text="Usuario" />
+                        <Frame
+                            Margin="0,1,0,10"
+                            Padding="3"
+                            CornerRadius="20">
+                            <Grid
+                                Margin="10,0"
+                                ColumnDefinitions="15,*"
+                                ColumnSpacing="2"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="Center">
+                                <Image Grid.Column="0" Source="user" />
+                                <Image>
+                                    <Image.Source>
+                                        <FontImageSource
+                                            FontFamily="Icons"
+                                            Glyph="&#xE800;"
+                                            Color="{StaticResource Primary}" />
+                                    </Image.Source>
+                                </Image>
+                                <Entry
+                                    x:Name="User"
+                                    Grid.Column="1"
+                                    Margin="10,0"
+                                    HorizontalOptions="FillAndExpand"
+                                    Placeholder="Usuario"
+                                    Text="{Binding User}"
+                                    VerticalOptions="FillAndExpand" />
+                            </Grid>
+                        </Frame>
+                        <Label
+                            x:Name="UserError"
+                            Margin="0,0,10,0"
+                            FontSize="11"
+                            HorizontalOptions="End"
+                            Text="{Binding User.Error}"
+                            TextColor="Red" />
+                    </VerticalStackLayout>
+                    <!--  #endUsuario  -->
+
+                    <!--  #Contraseña  -->
+                    <VerticalStackLayout Padding="0">
+                        <Label Margin="5,0" Text="Contraseña" />
+                        <Frame
+                            Margin="0,1,0,10"
+                            Padding="3"
+                            CornerRadius="20">
+                            <Grid
+                                Margin="10,0"
+                                ColumnDefinitions="15,*"
+                                ColumnSpacing="2"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="Center">
+                                <Image Grid.Column="0">
+                                    <Image.Source>
+                                        <FontImageSource
+                                            FontFamily="Icons"
+                                            Glyph="&#xE801;"
+                                            Color="{StaticResource Primary}" />
+                                    </Image.Source>
+                                </Image>
+                                <Entry
+                                    x:Name="Password"
+                                    Grid.Column="1"
+                                    Margin="10,0"
+                                    HorizontalOptions="FillAndExpand"
+                                    IsPassword="True"
+                                    Placeholder="Contraseña"
+                                    Text="{Binding Password}"
+                                    VerticalOptions="FillAndExpand" />
+                            </Grid>
+                        </Frame>
+                        <Label
+                            Margin="0,0,10,0"
+                            FontSize="11"
+                            HorizontalOptions="End"
+                            Text="{Binding Password.Error}"
+                            TextColor="Red" />
+
+                        <Label
+                            FontAttributes="Italic"
+                            Text="{Binding LoginMessage}"
+                            TextColor="{StaticResource Secondary}" />
+                    </VerticalStackLayout>
+                    <!--  #endContraseña  -->
+
+                    <!--  #Pie de página  -->
+                    <Button
+                        Margin="0,60,0,0"
+                        Command="{Binding LoginCommand}"
+                        Text="Iniciar sesión" />
+                    <Label
+                        Margin="0,105,0,0"
+                        FontSize="14"
+                        HorizontalTextAlignment="Center"
+                        Text="Uniremington 2025"
+                        TextColor="{StaticResource White}" />
+                    <!--  #endPie de página  -->
+                </VerticalStackLayout>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

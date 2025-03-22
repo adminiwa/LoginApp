@@ -1,0 +1,12 @@
+C:\MAUI\Parcial_TEST\LoginApp.Core\bin\Debug\net8.0\LoginApp.Core.deps.json
+C:\MAUI\Parcial_TEST\LoginApp.Core\bin\Debug\net8.0\LoginApp.Core.dll
+C:\MAUI\Parcial_TEST\LoginApp.Core\bin\Debug\net8.0\LoginApp.Core.pdb
+C:\MAUI\Parcial_TEST\LoginApp.Core\obj\Debug\net8.0\LoginApp.Core.csproj.AssemblyReference.cache
+C:\MAUI\Parcial_TEST\LoginApp.Core\obj\Debug\net8.0\LoginApp.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\MAUI\Parcial_TEST\LoginApp.Core\obj\Debug\net8.0\LoginApp.Core.AssemblyInfoInputs.cache
+C:\MAUI\Parcial_TEST\LoginApp.Core\obj\Debug\net8.0\LoginApp.Core.AssemblyInfo.cs
+C:\MAUI\Parcial_TEST\LoginApp.Core\obj\Debug\net8.0\LoginApp.Core.csproj.CoreCompileInputs.cache
+C:\MAUI\Parcial_TEST\LoginApp.Core\obj\Debug\net8.0\LoginApp.Core.dll
+C:\MAUI\Parcial_TEST\LoginApp.Core\obj\Debug\net8.0\refint\LoginApp.Core.dll
+C:\MAUI\Parcial_TEST\LoginApp.Core\obj\Debug\net8.0\LoginApp.Core.pdb
+C:\MAUI\Parcial_TEST\LoginApp.Core\obj\Debug\net8.0\ref\LoginApp.Core.dll
