@@ -5,6 +5,14 @@ Este proyecto corresponde a una aplicación de autenticación móvil desarrollad
 
 ---
 
+## Justificación Tecnológica
+
+Este proyecto fue desarrollado en **.NET MAUI**, ya que es la tecnología que actualmente manejo profesionalmente.
+
+Por razones de confidencialidad y políticas empresariales, no pude utilizar ninguna de las aplicaciones reales que tengo en curso, ya que están bajo acuerdos de privacidad y no pueden ser divulgadas públicamente.
+
+Por lo tanto, se optó por crear un proyecto funcional desde cero con fines estrictamente académicos, cubriendo todos los requerimientos de la actividad solicitada.
+
 ## Estructura del Proyecto
 
 ```
