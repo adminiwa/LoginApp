@@ -68,7 +68,7 @@ Se obtuvieron **6 pruebas exitosas de 6 ejecutadas**.
 
 | Prueba en Explorador | Prueba en Terminal |
 |----------------------|--------------------|
-| ![TestExplorer](Docs/images/prueba_ok_explorador.png) | ![TestTerminal](Docs/images/prueba_ok_terminal.png) |
+| ![TestExplorer](images/prueba_ok_explorador.png) | ![TestTerminal](images/prueba_ok_terminal.png) |
 
 ---
 
@@ -78,7 +78,7 @@ Pantalla principal de Login con campos de entrada y resultado de login:
 
 | Vista Login | Login Exitoso | Login Fallido |
 |-------------|----------------|----------------|
-| ![Login](Docs/images/vista_login.png) | ![OK](Docs/images/vista_ok_api.png) | ![Error](Docs/images/login_error_api.png) |
+| ![Login](images/vista_login.png) | ![OK](images/vista_ok_api.png) | ![Error](images/login_error_api.png) |
 
 ---
 
